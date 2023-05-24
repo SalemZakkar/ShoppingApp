@@ -28,6 +28,7 @@ dependencies:
   salem_package:
     git: https://github.com/SalemZakkar/SalemPackage.git
   json_annotation: ^4.8.0
+  flashy_tab_bar2: ^0.0.6
 
 dev_dependencies:
   flutter_test:

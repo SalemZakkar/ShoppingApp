@@ -17,7 +17,15 @@ class _MainAppState extends State<MainApp> {
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       routerConfig: appRouter.config(),
-
+      builder: (context, child) {
+        return GestureDetector(
+          onTap: () {
+            Focus.of(context).unfocus();
+          },
+          behavior: HitTestBehavior.opaque,
+          child: child!,
+        );
+      },
     );
   }
 }
