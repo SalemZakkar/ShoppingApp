@@ -31,6 +31,8 @@ ThemeData lightTheme = ThemeData(
     bottomAppBarTheme: const BottomAppBarTheme(
       color: Colors.white,
     ),
+    checkboxTheme:
+        CheckboxThemeData(fillColor: MaterialStateProperty.all(Colors.black)),
     listTileTheme: ListTileThemeData(
         iconColor: Colors.white,
         tileColor: Colors.white,

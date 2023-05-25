@@ -21,6 +21,7 @@ class _SignInScreenState extends State<SignInScreen> with ScreenUtil {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   var bloc = getIt<SignInBloc>();
+
   @override
   void initState() {
     errorMessages = {

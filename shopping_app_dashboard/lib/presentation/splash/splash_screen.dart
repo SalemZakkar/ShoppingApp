@@ -31,6 +31,7 @@ class _SplashScreenState extends State<SplashScreen> with ScreenUtil {
   bool load = true;
   bool failure = false;
   String errorMessage = "";
+
   @override
   void dispose() {
     bloc.close();

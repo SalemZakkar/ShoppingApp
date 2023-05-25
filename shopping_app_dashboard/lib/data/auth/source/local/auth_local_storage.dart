@@ -1,6 +1,6 @@
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shopping_app_dashboard/data/auth/models/local_user_model.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
 @singleton
 class AuthLocalDataSource {

@@ -7,7 +7,9 @@ import 'package:shopping_app_dashboard/domain/auth/repository/auth_repository.da
 @injectable
 class GetUserDataUseCase {
   AuthRepository authRepository;
+
   GetUserDataUseCase(this.authRepository);
+
   Future<Either<Failure, UserData>> call() async {
     return authRepository.getUserData();
   }

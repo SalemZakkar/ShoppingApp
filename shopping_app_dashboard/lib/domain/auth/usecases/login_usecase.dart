@@ -7,7 +7,9 @@ import '../repository/auth_repository.dart';
 @injectable
 class LoginUseCase {
   AuthRepository authRepository;
+
   LoginUseCase(this.authRepository);
+
   Future<Either<Failure, Unit>> call(String email, String password) async {
     return authRepository.login(email, password);
   }

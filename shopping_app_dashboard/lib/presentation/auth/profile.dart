@@ -20,6 +20,7 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> with ScreenUtil {
   var bloc = getIt<ProfileBloc>();
+
   @override
   void initState() {
     bloc.add(const ProfileEvent.started());

@@ -7,12 +7,13 @@ import 'package:salem_package/models/failure.dart';
 
 import '../../../domain/auth/usecases/auto_login_usecase.dart';
 
-part 'auto_login_event.dart';
 part 'auto_login_bloc.freezed.dart';
+part 'auto_login_event.dart';
 
 @injectable
 class AutoLoginBloc extends Bloc<AutoLoginEvent, BaseState> {
   AutoLoginUseCase autoLoginUseCase;
+
   AutoLoginBloc(this.autoLoginUseCase) : super(const BaseState()) {
     on<AutoLoginEvent>((event, emit) async {
       emit(state.setProgress());

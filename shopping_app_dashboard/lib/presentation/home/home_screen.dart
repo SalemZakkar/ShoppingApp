@@ -2,6 +2,7 @@ import 'package:auto_route/annotations.dart';
 import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_app_dashboard/presentation/auth/profile.dart';
+import 'package:shopping_app_dashboard/presentation/items/items_screen.dart';
 
 @RoutePage()
 class HomeScreen extends StatefulWidget {
@@ -14,10 +15,11 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int selected = 0;
   List pages = [
-    const SizedBox(),
+    const ItemsScreen(),
     const SizedBox(),
     const ProfileScreen(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

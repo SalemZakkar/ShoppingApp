@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:salem_package/enums/failure_type.dart';
 import 'package:salem_package/models/failure.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 mixin RequestChecker {
   Future<Either<Failure, T>> request<T>(var fun) async {

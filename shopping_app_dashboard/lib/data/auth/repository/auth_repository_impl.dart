@@ -2,12 +2,10 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
 import 'package:salem_package/enums/failure_type.dart';
-
 import 'package:salem_package/models/failure.dart';
 import 'package:shopping_app_dashboard/data/auth/models/local_user_model.dart';
 import 'package:shopping_app_dashboard/data/auth/source/local/auth_local_storage.dart';
 import 'package:shopping_app_dashboard/data/auth/source/remote/auth_remote.dart';
-
 import 'package:shopping_app_dashboard/domain/auth/entities/user_data.dart';
 
 import '../../../domain/auth/repository/auth_repository.dart';
@@ -16,7 +14,9 @@ import '../../../domain/auth/repository/auth_repository.dart';
 class AuthRepositoryImpl implements AuthRepository {
   AuthRemote remote;
   AuthLocalDataSource localDataSource;
+
   AuthRepositoryImpl(this.remote, this.localDataSource);
+
   @override
   Future<Either<Failure, Unit>> autoLogin() async {
     LocalUserModel localUserModel = await localDataSource.getData();

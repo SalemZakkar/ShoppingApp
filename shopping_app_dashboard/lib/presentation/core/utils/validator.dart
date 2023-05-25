@@ -39,4 +39,13 @@ class Validator {
       return false;
     }
   }
+
+  static bool checkPrice(String price) {
+    try {
+      double.parse(price);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
 }

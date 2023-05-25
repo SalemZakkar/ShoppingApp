@@ -1,12 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:injectable/injectable.dart';
 import 'package:salem_package/models/failure.dart';
 import 'package:shopping_app_dashboard/data/auth/models/user_model.dart';
 import 'package:shopping_app_dashboard/data/auth/source/remote/auth_remote.dart';
 import 'package:shopping_app_dashboard/domain/auth/entities/user_data.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 import '../../../core/request_checker.dart';
 
 @Singleton(as: AuthRemote)

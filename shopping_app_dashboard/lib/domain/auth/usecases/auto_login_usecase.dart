@@ -6,7 +6,9 @@ import 'package:shopping_app_dashboard/domain/auth/repository/auth_repository.da
 @injectable
 class AutoLoginUseCase {
   AuthRepository authRepository;
+
   AutoLoginUseCase(this.authRepository);
+
   Future<Either<Failure, Unit>> call() async {
     return authRepository.autoLogin();
   }
