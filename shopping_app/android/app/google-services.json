@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "523743085334",
+    "project_id": "shoppingapp-9a27d",
+    "storage_bucket": "shoppingapp-9a27d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523743085334:android:59d5cabb80f4dd6ddcc637",
+        "android_client_info": {
+          "package_name": "com.TheBlackPL.shopping_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "523743085334-da6npl2fjv88uues11d03popecetubkd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4vVuiMZaVemeqzWZJhHMzAZos3FJ1HUw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "523743085334-da6npl2fjv88uues11d03popecetubkd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "523743085334-27go936dn0073l4i05m71gqc3idl4m7e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.TheBlackPL.shoppingAppDashboard"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523743085334:android:1dd6bb7545bb476cdcc637",
+        "android_client_info": {
+          "package_name": "com.TheBlackPL.shopping_app_dashboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "523743085334-da6npl2fjv88uues11d03popecetubkd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4vVuiMZaVemeqzWZJhHMzAZos3FJ1HUw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "523743085334-da6npl2fjv88uues11d03popecetubkd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "523743085334-27go936dn0073l4i05m71gqc3idl4m7e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.TheBlackPL.shoppingAppDashboard"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
