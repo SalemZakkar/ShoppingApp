@@ -30,17 +30,19 @@ import 'package:shopping_app/domain/auth/usecase/logout_usecase.dart' as _i12;
 import 'package:shopping_app/domain/auth/usecase/sign_up_usecase.dart' as _i13;
 import 'package:shopping_app/domain/auth/usecase/update_user_usecase.dart'
     as _i14;
-import 'package:shopping_app/injectable_module.dart' as _i19;
-import 'package:shopping_app/presentation/auth/bloc/sign_in_bloc/sign_in_bloc.dart'
+import 'package:shopping_app/injectable_module.dart' as _i21;
+import 'package:shopping_app/presentation/auth/bloc/get_profile_bloc/get_profile_bloc.dart'
     as _i16;
-import 'package:shopping_app/presentation/auth/bloc/sign_in_memory_bloc/sign_in_from_memory_bloc.dart'
+import 'package:shopping_app/presentation/auth/bloc/sign_in_bloc/sign_in_bloc.dart'
     as _i17;
-import 'package:shopping_app/presentation/auth/bloc/sign_up_bloc/sign_up_bloc.dart'
+import 'package:shopping_app/presentation/auth/bloc/sign_in_memory_bloc/sign_in_from_memory_bloc.dart'
     as _i18;
+import 'package:shopping_app/presentation/auth/bloc/sign_up_bloc/sign_up_bloc.dart'
+    as _i19;
+import 'package:shopping_app/presentation/auth/bloc/update_photo_bloc/update_photo_bloc.dart'
+    as _i20;
 import 'package:shopping_app/presentation/core/bloc/auth_bloc.dart' as _i15;
 
-// ignore_for_file: unnecessary_lambdas
-// ignore_for_file: lines_longer_than_80_chars
 // initializes the registration of main-scope dependencies inside of GetIt
 Future<_i1.GetIt> init(
   _i1.GetIt getIt, {
@@ -79,19 +81,23 @@ Future<_i1.GetIt> init(
     gh<_i8.FirstTimeUseCase>(),
     gh<_i10.LoginFromMemoryUseCase>(),
   ));
-  gh.factory<_i16.SignInBloc>(() => _i16.SignInBloc(
+  gh.factory<_i16.GetProfileBloc>(
+      () => _i16.GetProfileBloc(gh<_i9.GetUserDataUseCase>()));
+  gh.factory<_i17.SignInBloc>(() => _i17.SignInBloc(
         gh<_i11.LoginUseCase>(),
         gh<_i15.AuthBloc>(),
       ));
-  gh.factory<_i17.SignInFromMemoryBloc>(() => _i17.SignInFromMemoryBloc(
+  gh.factory<_i18.SignInFromMemoryBloc>(() => _i18.SignInFromMemoryBloc(
         gh<_i10.LoginFromMemoryUseCase>(),
         gh<_i15.AuthBloc>(),
       ));
-  gh.factory<_i18.SignUpBloc>(() => _i18.SignUpBloc(
+  gh.factory<_i19.SignUpBloc>(() => _i19.SignUpBloc(
         gh<_i13.SignUpUseCase>(),
         gh<_i15.AuthBloc>(),
       ));
+  gh.factory<_i20.UpdatePhotoBloc>(
+      () => _i20.UpdatePhotoBloc(gh<_i14.UpdateUserUseCase>()));
   return getIt;
 }
 
-class _$InjectableModule extends _i19.InjectableModule {}
+class _$InjectableModule extends _i21.InjectableModule {}

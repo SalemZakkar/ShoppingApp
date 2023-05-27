@@ -24,7 +24,7 @@ class _OfferCardState extends State<OfferCard> {
               ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: Image.asset(
-                    Assets.images.onBoard2.path,
+                    Assets.images.onBoard4.path,
                     colorBlendMode: BlendMode.darken,
                     color: Colors.black.withOpacity(0.5),
                     width: MediaQuery.of(context).size.width,

@@ -54,7 +54,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 200 , mainAxisSpacing: 10 , crossAxisSpacing: 10 , mainAxisExtent: 300),
+                    maxCrossAxisExtent: 200,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 10,
+                    mainAxisExtent: 300),
                 itemBuilder: (context, index) {
                   return const ItemCard();
                 },

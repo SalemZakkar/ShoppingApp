@@ -13,7 +13,7 @@ class _ItemCardState extends State<ItemCard> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){},
+      onTap: () {},
       child: SizedBox(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,7 +25,11 @@ class _ItemCardState extends State<ItemCard> {
                     borderRadius: BorderRadius.circular(15)),
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
-                    child: Image.asset(Assets.images.onBoard4.path , width: double.infinity, fit: BoxFit.cover,)),
+                    child: Image.asset(
+                      Assets.images.onBoard4.path,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    )),
               ),
             ),
             10.spaceHeight(),
@@ -34,8 +38,20 @@ class _ItemCardState extends State<ItemCard> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Item name" , style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.w700 , fontSize: 15),),
-                  Text("\$200" , style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.w700 , fontSize: 15),),
+                  Text(
+                    "Item name",
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium!
+                        .copyWith(fontWeight: FontWeight.w700, fontSize: 15),
+                  ),
+                  Text(
+                    "\$200",
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium!
+                        .copyWith(fontWeight: FontWeight.w700, fontSize: 15),
+                  ),
                 ],
               ),
             )

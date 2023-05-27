@@ -8,20 +8,20 @@ import 'package:salem_package/models/failure.dart';
 import '../../../../domain/auth/usecase/login_use_case.dart';
 import '../../../core/bloc/auth_bloc.dart';
 
-part 'sign_in_event.dart';
 part 'sign_in_bloc.freezed.dart';
+part 'sign_in_event.dart';
 
 @injectable
 class SignInBloc extends Bloc<SignInEvent, BaseState> {
   LoginUseCase loginUseCase;
   AuthBloc authBloc;
-  SignInBloc(this.loginUseCase , this.authBloc) : super(const BaseState()) {
+
+  SignInBloc(this.loginUseCase, this.authBloc) : super(const BaseState()) {
     on<SignInEvent>((event, emit) async {
       emit(state.setProgress());
       Either<Failure, Unit> res =
           await loginUseCase.call(event.email, event.password);
-      res.fold(
-          (l) => emit(state.setFailure(l)), (r) {
+      res.fold((l) => emit(state.setFailure(l)), (r) {
         emit(state.setSuccess(r));
         authBloc.add(const AuthEvent.setAuth(loggedIn: true));
       });

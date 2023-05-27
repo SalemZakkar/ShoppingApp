@@ -70,7 +70,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '523743085334',
     projectId: 'shoppingapp-9a27d',
     storageBucket: 'shoppingapp-9a27d.appspot.com',
-    iosClientId: '523743085334-7du6s00selms0mvq0a5ua6qcc289f1dc.apps.googleusercontent.com',
+    iosClientId:
+        '523743085334-7du6s00selms0mvq0a5ua6qcc289f1dc.apps.googleusercontent.com',
     iosBundleId: 'com.TheBlackPL.shoppingApp',
   );
 }

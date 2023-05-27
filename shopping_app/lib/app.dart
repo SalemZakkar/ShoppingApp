@@ -15,6 +15,7 @@ class MainApp extends StatefulWidget {
 
 class _MainAppState extends State<MainApp> {
   AppRouter appRouter = AppRouter();
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider<AuthBloc>(

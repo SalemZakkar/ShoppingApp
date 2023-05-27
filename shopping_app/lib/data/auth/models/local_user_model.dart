@@ -8,5 +8,5 @@ class LocalUserModel with _$LocalUserModel {
     required bool loggedIn,
     required String email,
     required String password,
-}) = _LocalUserModel;
+  }) = _LocalUserModel;
 }

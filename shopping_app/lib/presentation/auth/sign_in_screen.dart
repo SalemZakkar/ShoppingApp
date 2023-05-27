@@ -32,6 +32,7 @@ class _SignInScreenState extends State<SignInScreen> with ScreenUtil {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   GlobalKey<FormState> globalKey = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +50,7 @@ class _SignInScreenState extends State<SignInScreen> with ScreenUtil {
           }
           if (state.fail) {
             stopLoading(context);
-            showErrorMessage(state.failure!.type , context);
+            showErrorMessage(state.failure!.type, context);
           }
         },
         child: Container(

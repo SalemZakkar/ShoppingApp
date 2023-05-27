@@ -35,6 +35,8 @@ dependencies:
   json_annotation: ^4.8.0
   flashy_tab_bar2: ^0.0.6
   carousel_slider: ^4.2.1
+  flutter_native_image: ^0.0.6+1
+  image_cropper: ^4.0.1
 
 dev_dependencies:
   flutter_test:

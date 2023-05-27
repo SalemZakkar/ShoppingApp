@@ -14,7 +14,9 @@ mixin RequestChecker {
       if (e.code == "too-many-requests") {
         return left(const Failure(type: FailureType.serverError));
       }
-      if (e.code == "user-not-found" || e.code == "wrong-password" || e.code == "email-already-in-use") {
+      if (e.code == "user-not-found" ||
+          e.code == "wrong-password" ||
+          e.code == "email-already-in-use") {
         return left(const Failure(type: FailureType.invalidArguments));
       }
       if (e.code == "network-request-failed") {

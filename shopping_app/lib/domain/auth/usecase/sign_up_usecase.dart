@@ -7,7 +7,9 @@ import 'package:shopping_app/domain/auth/repository/auth_repository.dart';
 @singleton
 class SignUpUseCase {
   AuthRepository authRepository;
+
   SignUpUseCase(this.authRepository);
+
   Future<Either<Failure, Unit>> call(UserEntity userEntity, String password) {
     return authRepository.signUp(userEntity, password);
   }

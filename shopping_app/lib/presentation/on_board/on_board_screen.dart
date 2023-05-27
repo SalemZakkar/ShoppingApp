@@ -1,9 +1,8 @@
-import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:salem_package/salem_package.dart';
 import 'package:shopping_app/presentation/core/router/app_router.dart';
 import 'package:shopping_app/presentation/core/source/assets.gen.dart';
-import 'package:salem_package/salem_package.dart';
 
 @RoutePage()
 class OnBoardScreen extends StatefulWidget {

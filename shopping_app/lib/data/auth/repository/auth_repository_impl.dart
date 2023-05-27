@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
 import 'package:salem_package/enums/failure_type.dart';
 import 'package:salem_package/models/failure.dart';
@@ -6,7 +7,6 @@ import 'package:shopping_app/data/auth/models/local_user_model.dart';
 import 'package:shopping_app/data/auth/source/local/auth_local_data_source.dart';
 import 'package:shopping_app/domain/auth/enitity/user_entity.dart';
 import 'package:shopping_app/domain/auth/repository/auth_repository.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 import '../source/remote/auth_remote.dart';
 
@@ -14,11 +14,12 @@ import '../source/remote/auth_remote.dart';
 class AuthRepositoryImpl extends AuthRepository {
   AuthLocalDataSource authLocalDataSource;
   AuthRemote authRemote;
+
   AuthRepositoryImpl(this.authLocalDataSource, this.authRemote);
+
   @override
   Future<Either<Failure, UserEntity>> getUserData() {
-    // TODO: implement getUserData
-    throw UnimplementedError();
+    return authRemote.getUserData();
   }
 
   @override
@@ -50,9 +51,8 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<Either<Failure, Unit>> updateUser(UserEntity userEntity) {
-    // TODO: implement updateUser
-    throw UnimplementedError();
+  Future<Either<Failure, Unit>> updateUser(String path) {
+    return authRemote.updateUser(path);
   }
 
   @override

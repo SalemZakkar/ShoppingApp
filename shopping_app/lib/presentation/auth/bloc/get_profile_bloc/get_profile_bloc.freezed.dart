@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'sign_in_from_memory_bloc.dart';
+part of 'get_profile_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$SignInFromMemoryEvent {
+mixin _$GetProfileEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
@@ -54,17 +54,16 @@ mixin _$SignInFromMemoryEvent {
 }
 
 /// @nodoc
-abstract class $SignInFromMemoryEventCopyWith<$Res> {
-  factory $SignInFromMemoryEventCopyWith(SignInFromMemoryEvent value,
-          $Res Function(SignInFromMemoryEvent) then) =
-      _$SignInFromMemoryEventCopyWithImpl<$Res, SignInFromMemoryEvent>;
+abstract class $GetProfileEventCopyWith<$Res> {
+  factory $GetProfileEventCopyWith(
+          GetProfileEvent value, $Res Function(GetProfileEvent) then) =
+      _$GetProfileEventCopyWithImpl<$Res, GetProfileEvent>;
 }
 
 /// @nodoc
-class _$SignInFromMemoryEventCopyWithImpl<$Res,
-        $Val extends SignInFromMemoryEvent>
-    implements $SignInFromMemoryEventCopyWith<$Res> {
-  _$SignInFromMemoryEventCopyWithImpl(this._value, this._then);
+class _$GetProfileEventCopyWithImpl<$Res, $Val extends GetProfileEvent>
+    implements $GetProfileEventCopyWith<$Res> {
+  _$GetProfileEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -82,7 +81,7 @@ abstract class _$$_StartedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_StartedCopyWithImpl<$Res>
-    extends _$SignInFromMemoryEventCopyWithImpl<$Res, _$_Started>
+    extends _$GetProfileEventCopyWithImpl<$Res, _$_Started>
     implements _$$_StartedCopyWith<$Res> {
   __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
       : super(_value, _then);
@@ -95,7 +94,7 @@ class _$_Started implements _Started {
 
   @override
   String toString() {
-    return 'SignInFromMemoryEvent.started()';
+    return 'GetProfileEvent.started()';
   }
 
   @override
@@ -164,6 +163,6 @@ class _$_Started implements _Started {
   }
 }
 
-abstract class _Started implements SignInFromMemoryEvent {
+abstract class _Started implements GetProfileEvent {
   const factory _Started() = _$_Started;
 }

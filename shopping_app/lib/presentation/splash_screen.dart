@@ -1,8 +1,6 @@
-import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:salem_package/bloc/base_state.dart';
 import 'package:salem_package/enums/failure_type.dart';
 import 'package:salem_package/salem_package.dart';
 import 'package:shopping_app/injection.dart';
@@ -26,6 +24,7 @@ class _SplashScreenState extends State<SplashScreen> with ScreenUtil {
   bool authError = false;
   bool progress = true;
   String error = "";
+
   @override
   void initState() {
     errorMessages = {FailureType.networkError: "no network"};

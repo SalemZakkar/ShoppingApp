@@ -17,12 +17,15 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$SignInEvent {
   String get email => throw _privateConstructorUsedError;
+
   String get password => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password) started,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email, String password)? started,
@@ -34,11 +37,13 @@ mixin _$SignInEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
@@ -61,6 +66,7 @@ abstract class $SignInEventCopyWith<$Res> {
   factory $SignInEventCopyWith(
           SignInEvent value, $Res Function(SignInEvent) then) =
       _$SignInEventCopyWithImpl<$Res, SignInEvent>;
+
   @useResult
   $Res call({String email, String password});
 }
@@ -72,6 +78,7 @@ class _$SignInEventCopyWithImpl<$Res, $Val extends SignInEvent>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -99,6 +106,7 @@ abstract class _$$_StartedCopyWith<$Res> implements $SignInEventCopyWith<$Res> {
   factory _$$_StartedCopyWith(
           _$_Started value, $Res Function(_$_Started) then) =
       __$$_StartedCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({String email, String password});
@@ -228,8 +236,10 @@ abstract class _Started implements SignInEvent {
 
   @override
   String get email;
+
   @override
   String get password;
+
   @override
   @JsonKey(ignore: true)
   _$$_StartedCopyWith<_$_Started> get copyWith =>

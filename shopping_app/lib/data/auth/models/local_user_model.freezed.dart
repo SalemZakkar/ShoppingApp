@@ -17,7 +17,9 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$LocalUserModel {
   bool get loggedIn => throw _privateConstructorUsedError;
+
   String get email => throw _privateConstructorUsedError;
+
   String get password => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -30,6 +32,7 @@ abstract class $LocalUserModelCopyWith<$Res> {
   factory $LocalUserModelCopyWith(
           LocalUserModel value, $Res Function(LocalUserModel) then) =
       _$LocalUserModelCopyWithImpl<$Res, LocalUserModel>;
+
   @useResult
   $Res call({bool loggedIn, String email, String password});
 }
@@ -41,6 +44,7 @@ class _$LocalUserModelCopyWithImpl<$Res, $Val extends LocalUserModel>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -74,6 +78,7 @@ abstract class _$$_LocalUserModelCopyWith<$Res>
   factory _$$_LocalUserModelCopyWith(
           _$_LocalUserModel value, $Res Function(_$_LocalUserModel) then) =
       __$$_LocalUserModelCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({bool loggedIn, String email, String password});
@@ -159,10 +164,13 @@ abstract class _LocalUserModel implements LocalUserModel {
 
   @override
   bool get loggedIn;
+
   @override
   String get email;
+
   @override
   String get password;
+
   @override
   @JsonKey(ignore: true)
   _$$_LocalUserModelCopyWith<_$_LocalUserModel> get copyWith =>

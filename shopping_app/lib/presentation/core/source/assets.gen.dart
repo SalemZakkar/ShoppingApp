@@ -12,23 +12,15 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/onBoard.jpg
-  AssetGenImage get onBoard => const AssetGenImage('assets/images/onBoard.jpg');
-
-  /// File path: assets/images/onBoard2.jpg
-  AssetGenImage get onBoard2 =>
-      const AssetGenImage('assets/images/onBoard2.jpg');
-
-  /// File path: assets/images/onBoard3.jpg
-  AssetGenImage get onBoard3 =>
-      const AssetGenImage('assets/images/onBoard3.jpg');
-
   /// File path: assets/images/onBoard4.jpg
   AssetGenImage get onBoard4 =>
       const AssetGenImage('assets/images/onBoard4.jpg');
 
+  /// File path: assets/images/person.png
+  AssetGenImage get person => const AssetGenImage('assets/images/person.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [onBoard, onBoard2, onBoard3, onBoard4];
+  List<AssetGenImage> get values => [onBoard4, person];
 }
 
 class Assets {

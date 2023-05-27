@@ -28,6 +28,7 @@ class _SignUpScreenState extends State<SignUpScreen> with ScreenUtil {
   TextEditingController password = TextEditingController();
   TextEditingController name = TextEditingController();
   TextEditingController confirmPassword = TextEditingController();
+
   @override
   void initState() {
     errorMessages = {

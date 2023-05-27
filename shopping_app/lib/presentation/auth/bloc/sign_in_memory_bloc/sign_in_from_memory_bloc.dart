@@ -8,13 +8,14 @@ import 'package:salem_package/models/failure.dart';
 import '../../../../domain/auth/usecase/login_from_memory_usecase.dart';
 import '../../../core/bloc/auth_bloc.dart';
 
-part 'sign_in_from_memory_event.dart';
 part 'sign_in_from_memory_bloc.freezed.dart';
+part 'sign_in_from_memory_event.dart';
 
 @injectable
 class SignInFromMemoryBloc extends Bloc<SignInFromMemoryEvent, BaseState> {
   LoginFromMemoryUseCase loginFromMemoryUseCase;
   AuthBloc authBloc;
+
   SignInFromMemoryBloc(this.loginFromMemoryUseCase, this.authBloc)
       : super(const BaseState()) {
     on<SignInFromMemoryEvent>((event, emit) async {

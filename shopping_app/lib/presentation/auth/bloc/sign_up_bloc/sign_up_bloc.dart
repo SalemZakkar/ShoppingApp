@@ -9,13 +9,14 @@ import 'package:shopping_app/domain/auth/enitity/user_entity.dart';
 import '../../../../domain/auth/usecase/sign_up_usecase.dart';
 import '../../../core/bloc/auth_bloc.dart';
 
-part 'sign_up_event.dart';
 part 'sign_up_bloc.freezed.dart';
+part 'sign_up_event.dart';
 
 @injectable
 class SignUpBloc extends Bloc<SignUpEvent, BaseState> {
   SignUpUseCase signUpUseCase;
   AuthBloc authBloc;
+
   SignUpBloc(this.signUpUseCase, this.authBloc) : super(const BaseState()) {
     on<SignUpEvent>((event, emit) async {
       emit(state.setProgress());

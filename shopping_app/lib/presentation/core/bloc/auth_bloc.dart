@@ -5,14 +5,15 @@ import 'package:shopping_app/domain/auth/usecase/login_from_memory_usecase.dart'
 
 import '../../../domain/auth/usecase/first_time_usecase.dart';
 
+part 'auth_bloc.freezed.dart';
 part 'auth_event.dart';
 part 'auth_state.dart';
-part 'auth_bloc.freezed.dart';
 
 @singleton
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   FirstTimeUseCase getFirstTimeUseCase;
   LoginFromMemoryUseCase loginFromMemory;
+
   AuthBloc(this.getFirstTimeUseCase, this.loginFromMemory)
       : super(const AuthState.initial()) {
     on<AuthEvent>((event, emit) {

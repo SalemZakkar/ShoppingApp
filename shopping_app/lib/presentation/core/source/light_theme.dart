@@ -33,6 +33,7 @@ ThemeData lightTheme = ThemeData(
         borderRadius: BorderRadius.circular(15),
       ),
     ),
+    listTileTheme: const ListTileThemeData(),
     textTheme: const TextTheme(
         bodyMedium: TextStyle(color: Color(0xFF5D5E65)),
         headlineMedium: TextStyle(color: Color(0xFF5D5E65))));
