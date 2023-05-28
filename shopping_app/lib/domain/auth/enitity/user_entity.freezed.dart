@@ -17,13 +17,9 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$UserEntity {
   String get id => throw _privateConstructorUsedError;
-
   String get name => throw _privateConstructorUsedError;
-
   String get email => throw _privateConstructorUsedError;
-
   String get img => throw _privateConstructorUsedError;
-
   String get gender => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -36,7 +32,6 @@ abstract class $UserEntityCopyWith<$Res> {
   factory $UserEntityCopyWith(
           UserEntity value, $Res Function(UserEntity) then) =
       _$UserEntityCopyWithImpl<$Res, UserEntity>;
-
   @useResult
   $Res call({String id, String name, String email, String img, String gender});
 }
@@ -48,7 +43,6 @@ class _$UserEntityCopyWithImpl<$Res, $Val extends UserEntity>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -92,7 +86,6 @@ abstract class _$$_UserEntityCopyWith<$Res>
   factory _$$_UserEntityCopyWith(
           _$_UserEntity value, $Res Function(_$_UserEntity) then) =
       __$$_UserEntityCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String id, String name, String email, String img, String gender});
@@ -198,19 +191,14 @@ abstract class _UserEntity implements UserEntity {
 
   @override
   String get id;
-
   @override
   String get name;
-
   @override
   String get email;
-
   @override
   String get img;
-
   @override
   String get gender;
-
   @override
   @JsonKey(ignore: true)
   _$$_UserEntityCopyWith<_$_UserEntity> get copyWith =>

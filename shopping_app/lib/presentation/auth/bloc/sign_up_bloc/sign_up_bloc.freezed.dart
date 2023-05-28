@@ -17,15 +17,12 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$SignUpEvent {
   UserEntity get entity => throw _privateConstructorUsedError;
-
   String get password => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(UserEntity entity, String password) started,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(UserEntity entity, String password)? started,
@@ -37,13 +34,11 @@ mixin _$SignUpEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
@@ -66,7 +61,6 @@ abstract class $SignUpEventCopyWith<$Res> {
   factory $SignUpEventCopyWith(
           SignUpEvent value, $Res Function(SignUpEvent) then) =
       _$SignUpEventCopyWithImpl<$Res, SignUpEvent>;
-
   @useResult
   $Res call({UserEntity entity, String password});
 
@@ -80,7 +74,6 @@ class _$SignUpEventCopyWithImpl<$Res, $Val extends SignUpEvent>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -116,7 +109,6 @@ abstract class _$$_StartedCopyWith<$Res> implements $SignUpEventCopyWith<$Res> {
   factory _$$_StartedCopyWith(
           _$_Started value, $Res Function(_$_Started) then) =
       __$$_StartedCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({UserEntity entity, String password});
@@ -249,10 +241,8 @@ abstract class _Started implements SignUpEvent {
 
   @override
   UserEntity get entity;
-
   @override
   String get password;
-
   @override
   @JsonKey(ignore: true)
   _$$_StartedCopyWith<_$_Started> get copyWith =>

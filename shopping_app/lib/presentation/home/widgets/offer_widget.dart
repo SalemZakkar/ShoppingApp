@@ -2,8 +2,11 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_app/presentation/home/widgets/offer_card.dart';
 
+import '../../../domain/home/domain/item_entity.dart';
+
 class OfferWidget extends StatefulWidget {
-  const OfferWidget({Key? key}) : super(key: key);
+  final List<ItemEntity> offers;
+  const OfferWidget({Key? key, required this.offers}) : super(key: key);
 
   @override
   State<OfferWidget> createState() => _OfferWidgetState();
@@ -17,11 +20,11 @@ class _OfferWidgetState extends State<OfferWidget> {
       height: 220,
       alignment: Alignment.center,
       child: CarouselSlider(
-        items: const [
-           OfferCard(),
-           OfferCard(),
-           OfferCard(),
-        ],
+        items: widget.offers
+            .map((e) => OfferCard(
+                  entity: e,
+                ))
+            .toList(),
         options: CarouselOptions(
             height: 200,
             autoPlay: true,

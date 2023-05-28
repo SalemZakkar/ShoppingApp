@@ -21,17 +21,12 @@ UserDataModel _$UserDataModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UserDataModel {
   String get name => throw _privateConstructorUsedError;
-
   String get email => throw _privateConstructorUsedError;
-
   String get gender => throw _privateConstructorUsedError;
-
   String get photo => throw _privateConstructorUsedError;
-
   String? get id => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $UserDataModelCopyWith<UserDataModel> get copyWith =>
       throw _privateConstructorUsedError;
@@ -42,7 +37,6 @@ abstract class $UserDataModelCopyWith<$Res> {
   factory $UserDataModelCopyWith(
           UserDataModel value, $Res Function(UserDataModel) then) =
       _$UserDataModelCopyWithImpl<$Res, UserDataModel>;
-
   @useResult
   $Res call(
       {String name, String email, String gender, String photo, String? id});
@@ -55,7 +49,6 @@ class _$UserDataModelCopyWithImpl<$Res, $Val extends UserDataModel>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -99,7 +92,6 @@ abstract class _$$_UserDataModelCopyWith<$Res>
   factory _$$_UserDataModelCopyWith(
           _$_UserDataModel value, $Res Function(_$_UserDataModel) then) =
       __$$_UserDataModelCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -220,19 +212,14 @@ abstract class _UserDataModel implements UserDataModel {
 
   @override
   String get name;
-
   @override
   String get email;
-
   @override
   String get gender;
-
   @override
   String get photo;
-
   @override
   String? get id;
-
   @override
   @JsonKey(ignore: true)
   _$$_UserDataModelCopyWith<_$_UserDataModel> get copyWith =>

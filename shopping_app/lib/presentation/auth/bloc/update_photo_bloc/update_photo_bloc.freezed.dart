@@ -17,13 +17,11 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$UpdatePhotoEvent {
   String get path => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String path) started,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String path)? started,
@@ -35,13 +33,11 @@ mixin _$UpdatePhotoEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
@@ -64,7 +60,6 @@ abstract class $UpdatePhotoEventCopyWith<$Res> {
   factory $UpdatePhotoEventCopyWith(
           UpdatePhotoEvent value, $Res Function(UpdatePhotoEvent) then) =
       _$UpdatePhotoEventCopyWithImpl<$Res, UpdatePhotoEvent>;
-
   @useResult
   $Res call({String path});
 }
@@ -76,7 +71,6 @@ class _$UpdatePhotoEventCopyWithImpl<$Res, $Val extends UpdatePhotoEvent>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -100,7 +94,6 @@ abstract class _$$_StartedCopyWith<$Res>
   factory _$$_StartedCopyWith(
           _$_Started value, $Res Function(_$_Started) then) =
       __$$_StartedCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String path});
@@ -219,7 +212,6 @@ abstract class _Started implements UpdatePhotoEvent {
 
   @override
   String get path;
-
   @override
   @JsonKey(ignore: true)
   _$$_StartedCopyWith<_$_Started> get copyWith =>

@@ -1,9 +1,14 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:salem_package/extensions/num_extension.dart';
-import 'package:shopping_app/presentation/core/source/assets.gen.dart';
+import 'package:shopping_app/domain/home/domain/item_entity.dart';
+
+import '../../core/router/app_router.dart';
 
 class ItemCard extends StatefulWidget {
-  const ItemCard({Key? key}) : super(key: key);
+  final ItemEntity itemEntity;
+  const ItemCard({Key? key, required this.itemEntity}) : super(key: key);
 
   @override
   State<ItemCard> createState() => _ItemCardState();
@@ -13,7 +18,9 @@ class _ItemCardState extends State<ItemCard> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        context.router.push(ViewItemRoute(itemEntity: widget.itemEntity));
+      },
       child: SizedBox(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,10 +32,15 @@ class _ItemCardState extends State<ItemCard> {
                     borderRadius: BorderRadius.circular(15)),
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
-                    child: Image.asset(
-                      Assets.images.onBoard4.path,
-                      width: double.infinity,
+                    child: CachedNetworkImage(
+                      imageUrl: widget.itemEntity.image,
+                      placeholder: (context, string) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      },
                       fit: BoxFit.cover,
+                      width: double.infinity,
                     )),
               ),
             ),
@@ -39,14 +51,14 @@ class _ItemCardState extends State<ItemCard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Item name",
+                    widget.itemEntity.name,
                     style: Theme.of(context)
                         .textTheme
                         .bodyMedium!
                         .copyWith(fontWeight: FontWeight.w700, fontSize: 15),
                   ),
                   Text(
-                    "\$200",
+                    "\$${widget.itemEntity.price}",
                     style: Theme.of(context)
                         .textTheme
                         .bodyMedium!

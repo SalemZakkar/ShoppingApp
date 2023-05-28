@@ -1,9 +1,12 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/cupertino.dart';
 
+import '../../../domain/home/domain/item_entity.dart';
 import '../../auth/profile_screen.dart';
 import '../../auth/sign_in_screen.dart';
 import '../../auth/sign_up_screen.dart';
 import '../../home/home_screen.dart';
+import '../../home/view_item_screen.dart';
 import '../../on_board/on_board_screen.dart';
 import '../../splash_screen.dart';
 
@@ -19,5 +22,6 @@ class AppRouter extends _$AppRouter {
         AutoRoute(page: SignUpRoute.page, path: "/sign_up"),
         AutoRoute(page: ProfileRoute.page, path: "/profile"),
         AutoRoute(page: SplashRoute.page, path: "/splash", initial: true),
+        AutoRoute(page: ViewItemRoute.page, path: "/viewItem"),
       ];
 }

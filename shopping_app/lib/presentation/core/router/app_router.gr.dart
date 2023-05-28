@@ -39,6 +39,16 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const HomeScreen(),
       );
     },
+    ViewItemRoute.name: (routeData) {
+      final args = routeData.argsAs<ViewItemRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ViewItemScreen(
+          key: args.key,
+          itemEntity: args.itemEntity,
+        ),
+      );
+    },
     OnBoardRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -108,6 +118,44 @@ class HomeRoute extends PageRouteInfo<void> {
   static const String name = 'HomeRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ViewItemScreen]
+class ViewItemRoute extends PageRouteInfo<ViewItemRouteArgs> {
+  ViewItemRoute({
+    Key? key,
+    required ItemEntity itemEntity,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ViewItemRoute.name,
+          args: ViewItemRouteArgs(
+            key: key,
+            itemEntity: itemEntity,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ViewItemRoute';
+
+  static const PageInfo<ViewItemRouteArgs> page =
+      PageInfo<ViewItemRouteArgs>(name);
+}
+
+class ViewItemRouteArgs {
+  const ViewItemRouteArgs({
+    this.key,
+    required this.itemEntity,
+  });
+
+  final Key? key;
+
+  final ItemEntity itemEntity;
+
+  @override
+  String toString() {
+    return 'ViewItemRouteArgs{key: $key, itemEntity: $itemEntity}';
+  }
 }
 
 /// generated route for

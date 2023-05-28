@@ -23,7 +23,6 @@ mixin _$AuthEvent {
     required TResult Function() getFirstTime,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
@@ -39,7 +38,6 @@ mixin _$AuthEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
@@ -47,7 +45,6 @@ mixin _$AuthEvent {
     required TResult Function(_GetFirstTime value) getFirstTime,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
@@ -78,7 +75,6 @@ class _$AuthEventCopyWithImpl<$Res, $Val extends AuthEvent>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 }
@@ -195,7 +191,6 @@ abstract class _$$_SetAuthCopyWith<$Res> {
   factory _$$_SetAuthCopyWith(
           _$_SetAuth value, $Res Function(_$_SetAuth) then) =
       __$$_SetAuthCopyWithImpl<$Res>;
-
   @useResult
   $Res call({bool loggedIn});
 }
@@ -325,7 +320,6 @@ abstract class _SetAuth implements AuthEvent {
   const factory _SetAuth({required final bool loggedIn}) = _$_SetAuth;
 
   bool get loggedIn;
-
   @JsonKey(ignore: true)
   _$$_SetAuthCopyWith<_$_SetAuth> get copyWith =>
       throw _privateConstructorUsedError;
@@ -448,7 +442,6 @@ mixin _$AuthState {
     required TResult Function(bool firstTime) unAuthenticated,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
@@ -464,7 +457,6 @@ mixin _$AuthState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -472,7 +464,6 @@ mixin _$AuthState {
     required TResult Function(UnAuthenticated value) unAuthenticated,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
@@ -503,7 +494,6 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 }
@@ -728,7 +718,6 @@ abstract class _$$UnAuthenticatedCopyWith<$Res> {
   factory _$$UnAuthenticatedCopyWith(
           _$UnAuthenticated value, $Res Function(_$UnAuthenticated) then) =
       __$$UnAuthenticatedCopyWithImpl<$Res>;
-
   @useResult
   $Res call({bool firstTime});
 }
@@ -860,7 +849,6 @@ abstract class UnAuthenticated implements AuthState {
       _$UnAuthenticated;
 
   bool get firstTime;
-
   @JsonKey(ignore: true)
   _$$UnAuthenticatedCopyWith<_$UnAuthenticated> get copyWith =>
       throw _privateConstructorUsedError;
