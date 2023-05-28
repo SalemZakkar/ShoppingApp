@@ -25,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> with ScreenUtil {
   List<ItemEntity> offers = [];
   List<ItemEntity> items = [];
   bool offer = true;
+  bool loaded = false;
   @override
   void initState() {
     errorMessages = {
@@ -52,6 +53,7 @@ class _HomeScreenState extends State<HomeScreen> with ScreenUtil {
           bloc: bloc,
           builder: (context, state) {
             if (state.progress) {
+              loaded = false;
               return const Center(
                 child: CircularProgressIndicator(),
               );
@@ -64,17 +66,20 @@ class _HomeScreenState extends State<HomeScreen> with ScreenUtil {
                   });
             }
             if (state.success) {
-              offers.clear();
-              items.clear();
-              List<ItemEntity> res = state.item!;
-              for (var element in res) {
-                if (element.offer) {
-                  offers.add(element);
-                } else {
-                  items.add(element);
+              if (!loaded) {
+                offers.clear();
+                items.clear();
+                List<ItemEntity> res = state.item!;
+                for (var element in res) {
+                  if (element.offer) {
+                    offers.add(element);
+                  } else {
+                    items.add(element);
+                  }
                 }
+                offer = offers.isNotEmpty;
+                loaded = true;
               }
-              offer = offers.isNotEmpty;
               return Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
@@ -107,6 +112,7 @@ class _HomeScreenState extends State<HomeScreen> with ScreenUtil {
                       ),
                       10.spaceHeight(),
                       GridView.builder(
+                        cacheExtent: double.infinity,
                         physics: const NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
                         gridDelegate:
@@ -116,7 +122,9 @@ class _HomeScreenState extends State<HomeScreen> with ScreenUtil {
                                 crossAxisSpacing: 10,
                                 mainAxisExtent: 300),
                         itemBuilder: (context, index) {
-                          return  ItemCard(itemEntity: items[index],);
+                          return ItemCard(
+                            itemEntity: items[index],
+                          );
                         },
                         itemCount: items.length,
                       )

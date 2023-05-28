@@ -14,23 +14,24 @@ class OfferWidget extends StatefulWidget {
 
 class _OfferWidgetState extends State<OfferWidget> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  late List<ItemEntity> data;
+  @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width,
-      height: 220,
-      alignment: Alignment.center,
-      child: CarouselSlider(
-        items: widget.offers
-            .map((e) => OfferCard(
-                  entity: e,
-                ))
-            .toList(),
-        options: CarouselOptions(
-            height: 200,
-            autoPlay: true,
-            viewportFraction: 1,
-            enlargeCenterPage: true),
-      ),
-    );
+        width: MediaQuery.of(context).size.width,
+        height: 220,
+        alignment: Alignment.center,
+        child: CarouselSlider(
+          options: CarouselOptions(
+              height: 200,
+              viewportFraction: 1,
+              autoPlay: true,
+              enlargeStrategy: CenterPageEnlargeStrategy.zoom),
+          items: widget.offers.map((e) => OfferCard(entity: e)).toList(),
+        ));
   }
 }

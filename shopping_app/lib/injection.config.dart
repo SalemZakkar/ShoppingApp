@@ -52,8 +52,6 @@ import 'package:shopping_app/presentation/core/bloc/auth_bloc.dart' as _i18;
 import 'package:shopping_app/presentation/home/bloc/get_items_bloc/get_items_bloc.dart'
     as _i25;
 
-// ignore_for_file: unnecessary_lambdas
-// ignore_for_file: lines_longer_than_80_chars
 // initializes the registration of main-scope dependencies inside of GetIt
 Future<_i1.GetIt> init(
   _i1.GetIt getIt, {

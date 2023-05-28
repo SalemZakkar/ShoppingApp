@@ -14,6 +14,12 @@ class OfferCard extends StatefulWidget {
 }
 
 class _OfferCardState extends State<OfferCard> {
+  late Image image;
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -33,9 +39,11 @@ class _OfferCardState extends State<OfferCard> {
                 child: CachedNetworkImage(
                   imageUrl: widget.entity.image,
                   height: 200,
-                  width: double.infinity,
+                  width: MediaQuery.of(context).size.width,
                   fit: BoxFit.cover,
-                  placeholder: (context , string){
+                  colorBlendMode: BlendMode.darken,
+                  color: Colors.black.withOpacity(0.5),
+                  placeholder: (context, string) {
                     return const Center(
                       child: CircularProgressIndicator(),
                     );

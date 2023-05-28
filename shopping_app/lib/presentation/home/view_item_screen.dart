@@ -18,99 +18,113 @@ class _ViewItemScreenState extends State<ViewItemScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "View",
-          style: TextStyle(fontSize: 25),
-        ),
-      ),
-      body: Container(
-        constraints: const BoxConstraints.expand(),
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width,
-                height: 380,
-                child: CachedNetworkImage(
-                  imageUrl: widget.itemEntity.image,
-                  fit: BoxFit.cover,
-                  placeholder: (context, string) => const Center(
-                    child: CircularProgressIndicator(),
-                  ),
-                ),
+      body: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
+        slivers: [
+          SliverAppBar(
+            iconTheme: const IconThemeData(color: Colors.white),
+            expandedHeight: MediaQuery.of(context).size.height * 0.9,
+            stretch: true,
+            pinned: true,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text(widget.itemEntity.name),
+              background: CachedNetworkImage(
+                imageUrl: widget.itemEntity.image,
+                fit: BoxFit.cover,
+                colorBlendMode: BlendMode.darken,
+                color: Colors.black.withOpacity(0.3),
               ),
-              10.spaceHeight(),
-              ListTile(
-                title: Text(
-                  widget.itemEntity.name,
-                  style: Theme.of(context).textTheme.headlineMedium,
-                ),
-                subtitle: Text(
-                  widget.itemEntity.description,
-                  style: const TextStyle(fontSize: 20),
-                ),
-              ),
-              ListTile(
-                title: Text(
-                  "${widget.itemEntity.price}\$",
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineMedium!
-                      .copyWith(fontSize: 20),
-                ),
-              ),
-              10.spaceHeight(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  IconButton(
-                      onPressed: () {
-                        if (quantity > 1) {
-                          setState(() {
-                            quantity--;
-                          });
-                        }
-                      },
-                      icon: const Icon(
-                        Icons.remove_circle_outline,
-                        color: Colors.red,
-                      )),
-                  Text(
-                    quantity.toString(),
-                    style: const TextStyle(fontSize: 25),
-                  ),
-                  IconButton(
-                      onPressed: () {
-                        setState(() {
-                          quantity++;
-                        });
-                      },
-                      icon: const Icon(Icons.add_circle_outline)),
-                ],
-              ),
-              10.spaceHeight(),
-            ],
+              stretchModes: const [
+                StretchMode.fadeTitle,
+                StretchMode.blurBackground
+              ],
+            ),
           ),
-        ),
+          SliverList(
+              delegate: SliverChildBuilderDelegate((_, index) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                ListTile(
+                  // title: Text(
+                  //   widget.itemEntity.name,
+                  //   style: Theme.of(context).textTheme.headlineMedium,
+                  // ),
+                  subtitle: Text(
+                    widget.itemEntity.description,
+                    style: const TextStyle(fontSize: 20),
+                  ),
+                ),
+                ListTile(
+                  title: Text(
+                    "${widget.itemEntity.price}\$",
+                    style: Theme.of(context)
+                        .textTheme
+                        .headlineMedium!
+                        .copyWith(fontSize: 20, color: Colors.black),
+                  ),
+                ),
+                10.spaceHeight(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          if (quantity > 1) {
+                            setState(() {
+                              quantity--;
+                            });
+                          }
+                        },
+                        icon: const Icon(
+                          Icons.remove_circle_outline,
+                          color: Colors.red,
+                        )),
+                    Text(
+                      quantity.toString(),
+                      style: const TextStyle(fontSize: 25),
+                    ),
+                    IconButton(
+                        onPressed: () {
+                          setState(() {
+                            quantity++;
+                          });
+                        },
+                        icon: const Icon(Icons.add_circle_outline)),
+                  ],
+                ),
+                10.spaceHeight(),
+                AnimatedButton(
+                    loading: false,
+                    backGroundColor: Theme.of(context).primaryColor,
+                    height: 50,
+                    width: MediaQuery.of(context).size.width * 0.5,
+                    onPressed: () {},
+                    child: const Text(
+                      "Add To Cart",
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    )),
+                10.spaceHeight()
+              ],
+            );
+          }, childCount: 1))
+        ],
       ),
-      bottomNavigationBar: Container(
-        height: 70,
-        width: MediaQuery.of(context).size.width,
-        alignment: Alignment.center,
-        child: AnimatedButton(
-            loading: false,
-            backGroundColor: Theme.of(context).primaryColor,
-            height: 50,
-            width: MediaQuery.of(context).size.width * 0.5,
-            onPressed: () {},
-            child: const Text(
-              "Add To Cart",
-              style: TextStyle(color: Colors.white, fontSize: 20),
-            )),
-      ),
+      // bottomNavigationBar: Container(
+      //   height: 70,
+      //   width: MediaQuery.of(context).size.width,
+      //   alignment: Alignment.center,
+      //   child: AnimatedButton(
+      //       loading: false,
+      //       backGroundColor: Theme.of(context).primaryColor,
+      //       height: 50,
+      //       width: MediaQuery.of(context).size.width * 0.5,
+      //       onPressed: () {},
+      //       child: const Text(
+      //         "Add To Cart",
+      //         style: TextStyle(color: Colors.white, fontSize: 20),
+      //       )),
+      // ),
     );
   }
 }
